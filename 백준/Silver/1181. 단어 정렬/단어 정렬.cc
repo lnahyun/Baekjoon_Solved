@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-bool Comparelength(const string&a, string&b) {
+bool Comparelength(const string&a, const string&b) {
 	if (a.length() == b.length()) {
 		return a < b;
 	}
@@ -13,6 +13,10 @@ bool Comparelength(const string&a, string&b) {
 }
 
 int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
 	int N; cin >> N;
 	vector<string> v;
 	for (int i = 0; i < N; i++) {
@@ -30,6 +34,6 @@ int main() {
 
 	for (auto it = v.begin(); it < v.end(); it++) {
 		cout << *it;
-		cout << endl;
+		cout << "\n";
 	}
 }
