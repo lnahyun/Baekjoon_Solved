@@ -13,10 +13,6 @@ bool Comparelength(const string&a, const string&b) {
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
 	int N; cin >> N;
 	vector<string> v;
 	for (int i = 0; i < N; i++) {
