@@ -1,11 +1,10 @@
-//1181번
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
-bool Comparelength(string a, string b) {
+bool Comparelength(const string&a, string&b) {
 	if (a.length() == b.length()) {
 		return a < b;
 	}
