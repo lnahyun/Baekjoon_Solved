@@ -1,4 +1,4 @@
-//2751번
+//2751번d
 #include <iostream>
 #include <vector>
 #include <algorithm>
