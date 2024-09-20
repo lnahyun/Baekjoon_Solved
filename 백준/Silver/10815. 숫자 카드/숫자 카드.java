@@ -2,26 +2,41 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
+
         int N = Integer.parseInt(br.readLine());
-        ArrayList<Integer> arr = new ArrayList<>();
-        StringTokenizer st1 = new StringTokenizer(br.readLine());
-        while (N--!=0){
-            arr.add(Integer.parseInt(st1.nextToken()));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        String[] num = new String[N];
+
+        for(int i = 0; i<N; i++) {
+            num[i] = st.nextToken();
         }
-        Collections.sort(arr);
+
+        Arrays.sort(num);
+
         int M = Integer.parseInt(br.readLine());
-        StringTokenizer st2 = new StringTokenizer(br.readLine());
-        while (M--!=0){
-            int value = Integer.parseInt(st2.nextToken());
-            if(Collections.binarySearch(arr, value)>=0){
-                sb.append("1 ");
-            }else{
-                sb.append("0 ");
+        st = new StringTokenizer(br.readLine(), " ");
+        String[] inputNum = new String[M];
+
+        for(int i = 0; i<M; i++) {
+            inputNum[i] = st.nextToken();
+        }
+
+
+        //비교 로직 (이분탐색)
+        for(int i = 0; i<M; i++) {
+            int index = Arrays.binarySearch(num, inputNum[i]);
+            if(index < 0)
+                sb.append(0).append(" ");
+            else sb.append(1).append(" ");
+        }
+
+        sb.setLength(sb.length()-1);
+        System.out.print(sb);
+
+
+
             }
         }
-        System.out.print(sb);
-    }
-}
