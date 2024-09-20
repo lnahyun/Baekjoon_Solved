@@ -31,7 +31,7 @@ public class Main {
             int start = 0;
             int end = deque.size()-1;
             //함수 구현
-            int count = 0;
+            boolean errorSt = false;
             for (int k = 0; k < Function.length(); k++) {
                 //R이 나오면 뒤집기
                 if (Function.charAt(k) == 'R') {
@@ -42,7 +42,7 @@ public class Main {
                 //D가 나오면 첫 번째 수 버리거나 에러 처리
                 else {
                     if (deque.isEmpty()) { //배열이 비어있을 때 오류처리
-                        count++;
+                        errorSt = true;
                         break;
                     } else {
                         if(end ==0 && start==0){
@@ -58,7 +58,7 @@ public class Main {
                     }
                 }
             }
-            if (count > 0) {
+            if (errorSt) {
                 sb.append("error" + "\n");
             } else {
                 sb.append("[");
